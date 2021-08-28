@@ -1,0 +1,23 @@
+/* base.html */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+header.masthead {
+    padding-top: 54px;
+}
+.navbar {
+    background-color: #3acccb;
+	color: white;
+	border-radius: 0px;
+    padding: 0px 50px;
+    font-size: large;
+}
+.flexbox {
+    display: flex;
+}
+.fixed-top {
+    position: fixed;
+}
