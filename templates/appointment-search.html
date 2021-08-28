@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Appointment {% endblock %}
+
+{% block content %}
+<div class="instructions">
+Click the date of the reservation you would like
+</div>
+<div class="container calendar-container">
+    <div class="calendar">
+        <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1>Month</h1>
+                <p>Date</p>
+            </div>
+            <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days"></div>
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+{% endblock %}

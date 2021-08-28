@@ -22,6 +22,8 @@ login_manager.login_view = '/'
 @app.route('/')
 def login_page():
     """ Show login page"""
+    if current_user.is_authenticated:
+        return redirect('/appointment/search')
 
     return render_template('login-page.html')
 
@@ -39,7 +41,7 @@ def login():
     """ Log user in and add user info to session """
 
     if current_user.is_authenticated:
-        return redirect('/newappointment')
+        return redirect('/appointment/search')
         
     email = request.form.get('email')
     password = request.form.get('password')
@@ -53,7 +55,7 @@ def login():
         if user.check_password(password)==True:
             login_user(user)
             # flash('Login Successful')
-            return redirect('/newappointment')
+            return redirect('/appointment/search')
         else:
             flash('Invalid password.')
             return redirect('/')
@@ -95,10 +97,10 @@ def logout():
     flash('Successfully logged out')
     return redirect('/')
 
-@app.route('/newappointment')
+@app.route('/appointment/search')
 def create_page():
-    """ Show create appointment page"""
-    return render_template('create-appointment.html')
+    """ Show appointment search page"""
+    return render_template('appointment-search.html')
 
 if __name__ == "__main__":
     connect_to_db(app)
