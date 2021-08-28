@@ -1,6 +1,6 @@
 const date = new Date();
 
-const renderCalendar = () => {
+function renderCalendar() {
     date.setDate(1);
 
     const monthDays = document.querySelector(".days");
@@ -48,12 +48,12 @@ const renderCalendar = () => {
 
     let days = "";
 
-    for(let x = firstDayIndex; x > 0; x--) {
+    for (let x = firstDayIndex; x > 0; x--) {
         days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
     }
 
     for (let i = 1; i <= lastDay; i++) {
-        if(
+        if (
             i === new Date().getDate() && 
             date.getMonth() === new Date().getMonth()
         ) {
@@ -65,8 +65,9 @@ const renderCalendar = () => {
 
     for (let j = 1; j <= nextDays; j++) {
         days += `<div class="next-date">${j}</div>`;
-        monthDays.innerHTML = days;
     }
+
+    monthDays.innerHTML = days;
 };
 
 document.querySelector(".prev").addEventListener("click", () => {
@@ -80,3 +81,8 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 
 renderCalendar();
+
+
+// document.querySelector(".days").addEventListener("click", () => {
+
+// });

@@ -17,6 +17,11 @@ header.masthead {
     padding: 0px 50px;
     font-size: large;
 }
+#melon-tasting-logo {
+    color: #333333;
+    font-size: x-large;
+    font-weight: 800;
+}
 .flexbox {
     display: flex;
 }
