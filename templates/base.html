@@ -17,7 +17,7 @@
   <body>
     <!-- Fixed Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <a id="melon-tasting-logo" class="navbar-brand mb-2" href="#">Melon Tasting</a>
+      <a id="melon-tasting-logo" class="navbar-brand mb-2" href="/">Melon Tasting</a>
       <!-- Make navbar toggleable for small devices -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,11 @@
           <ul class="navbar-nav text-right ml-auto mb-2 mb-lg-2">
             <li class="nav-item">
               Welcome, {{ current_user.name }}!
+            </li>
+          </ul>
+          <ul class="navbar-nav text-right ml-auto mb-2 mb-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="/confirmedappointments">View Appointments</a>
             </li>
           </ul>
           <ul class="navbar-nav text-right ml-log mb-2 mb-lg-2">

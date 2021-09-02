@@ -50,9 +50,8 @@ class Appointment(db.Model):
                             primary_key=True)
     id = db.Column(db.Integer, 
                             db.ForeignKey('users.id'))
-    date = db.Column(db.Date)
-    starttime = db.Column(db.DateTime)
-    # appointment_endtime = db.Colum(db.Time)
+    date = db.Column(db.String)
+    starttime = db.Column(db.String)
 
     #relationship tables:
     user = db.relationship("User",

@@ -3,32 +3,58 @@
 {% block title %} Create Appointment {% endblock %}
 
 {% block content %}
-<div class="instructions">
-Click the date of the reservation you would like
-</div>
-<div class="container calendar-container">
-    <div class="calendar">
-        <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">
-                <h1>Month</h1>
-                <p>Date</p>
+<div class="row">
+    <div class="col interactive-calendar">
+        <div class="instructions">
+            Click the date of the reservation you would like
+        </div>
+        <div class="container calendar-container">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">
+                        <h1>Month</h1>
+                        <p>Date</p>
+                    </div>
+                    <i class="fas fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days"></div>
             </div>
-            <i class="fas fa-angle-right next"></i>
         </div>
-        <div class="weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
+    </div>
+    <div class="col built-in-calendar">
+        <div class="row show-flash">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class=flashes>
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
         </div>
-        <div class="days"></div>
+        <form method="GET" action="/appointmentresults">
+            <div class="form-group">
+                <label>Enter your preferred appointment date</label>
+                <input id="appointment-day" class="form-control" type="date" name="appointment-day" required>
+            </div>
+            <input type="submit" value="View Available Times"
+                class="btn view-time-btn">
+        </form>
     </div>
 </div>
 
-<script src="static/script.js"></script>
 
+
+<script src="static/script.js"></script>
 {% endblock %}

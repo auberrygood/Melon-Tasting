@@ -22,12 +22,16 @@ header.masthead {
     font-size: x-large;
     font-weight: 800;
 }
+.ml-auto {
+    margin-left: auto;
+}
 .flexbox {
     display: flex;
 }
 .fixed-top {
     position: fixed;
 }
+
 
 /* appointment-search */
 .instructions {
@@ -116,4 +120,35 @@ header.masthead {
 }
 .today {
     background-color: #3acccb;
+}
+.form-group {
+    width: 90%;
+    text-align: center;
+    padding-top: 2rem;
+}
+.form-control {
+    padding: 1rem;
+    margin: 1rem;
+}
+.btn {
+    padding: 10px;
+    background-color: #3acccb;
+    border-color: #3acccb;
+    color: white;
+    font-weight: 600;
+    border-radius: 25px 25px 25px 25px;
+}
+.view-time-btn {
+    width: 100%;
+    justify-content: right;
+    align-items: right;
+}
+
+
+/* Book Appointment */
+.time-title{
+    text-align: center;
+}
+#available-time-slots {
+    width:auto;
 }

@@ -57,9 +57,12 @@ function renderCalendar() {
             i === new Date().getDate() && 
             date.getMonth() === new Date().getMonth()
         ) {
-            days += `<div class="today">${i}</div>`;
+            days += `<div class="caldate ${i} today" value="${i}">${i}</div>`;
+        //     document.querySelector(`".${i}"`).addEventListener("click", () => {
+        //         document.querySelector(".chosen-appt").innerHTML = "appointment here";
+        // })} else {
         } else {
-            days += `<div>${i}</div>`;
+            days += `<div class="caldate ${i}" value="${i}">${i}</div>`;
         }
     }
 
@@ -82,7 +85,6 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
-
-// document.querySelector(".days").addEventListener("click", () => {
-
+// document.querySelector(".caldate").addEventListener("click", () => {
+//     document.querySelector(".apptdisplay p").innerHTML = new Date().toDateString();
 // });

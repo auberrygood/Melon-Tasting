@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Available Appointments {% endblock %}
+
+{% block content %}
+
+<h3 class="time-title">Available Time Slots for {{ appointment_day }}</h3>
+
+<div class="row">
+    <div class="col">
+        {% if available_appointments %}
+        <form method="POST" action="/bookappointment/{{ appointment_day }}">
+            <div class="form-group">
+
+            </div>
+            <div class="form-group">
+                <select
+                    id="available-time-slots"
+                    class="form-control custom-select"
+                    name="available-time-slots"
+                >
+                    <option selected="selected" disabled="disabled">Select an Available Appointment Time to Book</option>
+                    {% for appt in available_appointments %}
+                        <option value="{{ appt }}"> {{ appt }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="submit" value="Book Appointment" class="btn btn-book">
+        </form>
+        {% else %}
+            <p>
+                <span id="no-available">
+                    <i>Sorry, No Available Appointments This Day</i>
+                </span>
+            </p>
+        {% endif %}  
+    </div>
+</div>
+
+
+
+{% endblock %}
