@@ -35,7 +35,7 @@ def show_all_users():
 
 def get_user_by_email(email):
     """ Query for user by email """
-    user = User.query.filter_by(email=email).first()
+    user = User.query.filter_bget_user_y(email=email).first()
     if user:
         return user
     else:
@@ -104,3 +104,11 @@ def show_available_appointments_by_date(date):
     return all_time_slots
     
     
+if __name__ == '__main__':
+    from server import app
+
+    # Call connect_to_db(app, echo=False) if your program output gets
+    # too annoying; this will tell SQLAlchemy not to print out every
+    # query it executes.
+
+    connect_to_db(app)
